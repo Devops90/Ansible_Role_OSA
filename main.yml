@@ -1,0 +1,15 @@
+# linux install jdk and httpd
+- hosts: all
+  gather_facts: true
+  become: true
+  roles:
+# install jdk 
+  - name: install jdk
+    role: linux-install-jdk
+    tags:
+      - jdk
+# install httpd
+  - name: install httpd services
+    role: linux-install-httpd
+    tags:
+      - httpd
